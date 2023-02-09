@@ -23,10 +23,11 @@ const addEvent = () => {
 } 
 
 const changeSize = element => {
-    return (
-        element.style.transform = 'scale(1.03)',
-        element.style.filter = 'grayscale(0)'
-    );
+    if (element.classList.contains('card2')) {
+        element.classList.remove('card2');
+    } else {
+        element.classList.add('card2');
+    }
 }
 
 function backSize(element) {
