@@ -55,7 +55,7 @@ body {
     grid-template-columns: 300px 300px 300px;
     grid-template-rows: 250px 250px 250px;
     justify-content: center;
-    column-gap: 20px;
+    column-gap: 75px;
     row-gap: 20px;
 }
 
@@ -65,7 +65,7 @@ body {
     width: 350px;
     height: 250px;
     padding: 20px;
-    box-shadow: 0px 13px 15px hsla(229, 6%, 66%, 0.267);
+    box-shadow: 0px 6px 15px hsla(229, 6%, 66%, 0.267);
     border-radius: 6px;
     font-size: 0.8em;
     color: var(--veryDarkBlue);
@@ -74,6 +74,7 @@ body {
     background-color: white;
     justify-content: space-between;
     filter: grayscale(80%);
+    cursor: pointer;
 }
 
 .card h2 {
@@ -113,19 +114,10 @@ body {
     justify-content: flex-end;
 }
 
-.card:hover {
-    filter: grayscale(0);
-    scale: 1.1;
-}
-
 @media all and (max-width: 800px) {
 
     .head {
         margin-bottom: 20px;
-    }
-
-    .p_head {
-        
     }
 
     .grid {
