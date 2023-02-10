@@ -1,23 +1,23 @@
-const card = document.querySelector('.card');
-const cards = getListOfNodeList();
+const card = document.querySelectorAll('.card');
+const cards = []
+getListOfNodeList(cards, card);
 
 function start() {
-    addEvent()
+    addEvent(cards);
 }
 
-function getListOfNodeList() {
-    const card = document.querySelectorAll('.card');
-    const cards = [];
-    for (i of card) {
-        cards.push(i);
+function getListOfNodeList(list, nodelist) {
+    for (i of nodelist) {
+        list.push(i);
     }
-    return cards;
+    return list;
 }
 
-const addEvent = () => {
-    cards.forEach(el => {
+const addEvent = (listCard) => {
+    listCard.forEach(el => {
         el.addEventListener('click', e => {
             changeSize(el);
+            rotateImage(el.children[1].children[0]);
         })
     })
 } 
@@ -30,9 +30,13 @@ const changeSize = element => {
     }
 }
 
-function backSize(element) {
-    const default_ = element.style.transform = 'scale(1)';
-    return default_;
+const rotateImage = (element) => {
+    console.log(element);
+    if (element.classList.contains('img2')) {
+        element.classList.remove('img2');
+    } else {
+        element.classList.add('img2');
+    }
 }
 
 start();
