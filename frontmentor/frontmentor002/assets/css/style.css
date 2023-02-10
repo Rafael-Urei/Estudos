@@ -22,6 +22,9 @@ body {
     color: var(--grayishBlue);
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
+    animation-name: bgchangecolor;
+    animation-duration: 14s;
+    animation-iteration-count: infinite;
 }
 
 .container {
@@ -142,6 +145,27 @@ body {
     animation-duration: 250ms;
     animation-name: slidein;
     transition: 200ms;
+}
+
+
+@keyframes bgchangecolor {
+    from {
+        background-color: var(--veryLightGray);
+    }
+
+    35% {
+        background-color: var(--grayishBlue);
+        color: white;
+    }
+
+    50% {
+        background-color: rgb(12, 27, 49);
+        color: white;
+    }
+
+    75% {
+        background-color: var(--veryLightGray);
+    }
 }
 
 @keyframes slidein {
