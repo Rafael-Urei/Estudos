@@ -1,0 +1,39 @@
+#front-card-container {
+    display: grid;
+    position: relative;
+}
+
+#card-front-input {
+    display: grid;
+    position: absolute;
+    grid-template-columns: 1fr 1fr;
+    width: 400px;
+    margin: 0px 0px 20px 22.5px;
+    align-self: end;
+    row-gap: 20px;
+}
+
+#front-card-date, #front-card-name, #front-card-number {
+    color: white;
+    background-color: transparent;
+    box-shadow: none;
+    border-style: unset;
+    text-indent: 0%;
+    font-weight: 400;
+}
+
+#front-card-number {
+    font-size: 1.5em;
+}
+
+#front-card-date {
+    grid-column-start: 2;
+    width: 70px;
+    justify-self: end;
+    text-align: right;
+}
+
+#front-card-name {
+    grid-column-start: 1;
+    width: auto;
+}
