@@ -3,6 +3,11 @@
     position: relative;
 }
 
+#back-card-container {
+    display: grid;
+    position: relative;
+}
+
 #card-front-input {
     display: grid;
     position: absolute;
@@ -13,17 +18,19 @@
     row-gap: 20px;
 }
 
-#front-card-date, #front-card-name, #front-card-number {
+#front-card-date, #front-card-name, #front-card-number, #back-card-cvv {
     color: white;
     background-color: transparent;
     box-shadow: none;
     border-style: unset;
     text-indent: 0%;
     font-weight: 400;
+    letter-spacing: 0.1em;
 }
 
 #front-card-number {
-    font-size: 1.5em;
+    grid-column-end: span 2;
+    font-size: 1.75em;
 }
 
 #front-card-date {
@@ -36,4 +43,18 @@
 #front-card-name {
     grid-column-start: 1;
     width: auto;
+}
+
+#card-back-input {
+    display: flex;
+    position: absolute;
+    justify-content: flex-end;
+    align-self: center;
+    width: 400px;
+}
+
+#back-card-cvv {
+    width: 70px;
+    text-align: end;
+    justify-self: flex-end;
 }

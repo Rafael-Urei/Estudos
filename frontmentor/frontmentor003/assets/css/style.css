@@ -19,6 +19,14 @@ main {
     display: grid;
     grid-auto-flow: column;
     gap: 50px;
+    position: relative;
+}
+
+#purple-background {
+    background-image: url(../images/bg-main-desktop.png);
+    background-size: cover;
+    height: 100vh;
+    max-width: 60%;
 }
 
 #card {
@@ -42,15 +50,17 @@ main {
 
 .form-section {
     display: flex;
-    width: 300px;
-    margin: auto 200px;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 form {
     display: grid;
     grid-auto-rows: auto;
     row-gap: 20px;
-    max-width: 100%;
+    max-width: 300px;
+    min-width: 300px;
     scale: 1.1;
 }
 
@@ -108,3 +118,4 @@ button {
     height: 40px;
     border-radius: 5px;
 }
+

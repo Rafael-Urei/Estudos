@@ -7,25 +7,29 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/cardstyle.css">
+    <link rel="stylesheet" href="assets/css/mediaquery.css">
 </head>
 <body>
     <main>
         <section id="background-section">
-            <picture>
-                <div id="card">
-                    <div id="front-card-container">
-                        <img id="front-card" src="assets/images/bg-card-front.png" alt="">
-                        <div id="card-front-input">
-                            <input type="text" id="front-card-number" value="0000 0000 0000 0000">
-                            <input type="text" id="front-card-name" value="JANNE APLESSEED">
-                            <input type="text" id="front-card-date" value="00/00">
-                        </div>
-                    </div>
-                    <img id="back-card" src="assets/images/bg-card-back.png" alt="">
-                </div>
-                <img src="assets/images/bg-main-desktop.png" alt="">
-            </picture>
+            <div id="purple-background"></div>
         </section>
+        <div id="card">
+            <div id="front-card-container">
+                <img id="front-card" src="assets/images/bg-card-front.png" alt="">
+                <div id="card-front-input">
+                    <input type="text" disabled id="front-card-number" value="0000 0000 0000 0000">
+                    <input type="text" disabled id="front-card-name" value="JANNE APLESSEED">
+                    <input type="text" disabled id="front-card-date" value="00/00">
+                </div>
+            </div>
+            <div id="back-card-container">
+                <img id="back-card" src="assets/images/bg-card-back.png" alt="">
+                <div id="card-back-input">
+                    <input type="text" disabled id="back-card-cvv" value="000">
+                </div>
+            </div>
+        </div>
         <section class="form-section">
             <form action="">
                 <div>

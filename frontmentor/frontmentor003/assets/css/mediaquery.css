@@ -1,0 +1,50 @@
+@media all and (max-width: 1300px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #purple-background {
+        background-image: url(../images/bg-main-mobile.png);
+        min-width: 100vw;
+        max-height: 300px;
+    }
+
+    #card {
+        position: absolute;
+        top: -10%;
+        left: 0px;
+        display: grid;
+        grid-template-rows: 245px;
+        grid-template-columns: 500px;
+        gap: 0px;
+        scale: 0.7;
+        width: 100%;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    #front-card-container {
+        justify-self: start;
+        grid-row-start: 2 50%;
+        z-index: 1;
+        position: relative;
+    }
+
+    #back-card-container {
+       justify-self: end;
+       grid-row-start: 1;
+       position: relative;
+       top: 43%;
+    }
+
+    .form-section {
+        margin: 50px 0px 0px 0px;
+        justify-content: center;
+    }
+
+    form {
+        width: 100%;
+    }
+}
