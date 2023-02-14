@@ -22,6 +22,10 @@ function Formulario() {
                 display.value = element.value;
                 display.innerHTML = element.value;
             }
+            if (element.id === 'card-number') {
+                const formatedNumber = this.formataNumero(element.value);
+                display.innerHTML = formatedNumber;
+            }
         })
     }
 
@@ -34,6 +38,18 @@ function Formulario() {
             if (element.id === 'year-number') this.addDisplay(this.year, this.display_year, element.id);
             if (element.id === 'CVC') this.addDisplay(this.cvv, this.display_cvv, element.id);
         })
+    }
+
+    this.formataNumero = (toFormat) => {
+        const listCardNumber = [];
+        for (i in toFormat) {
+            if (i % 5 === 0) {
+                toFormat = toFormat.substr(0, i)+'-'+toFormat.substr(i);
+            }
+        }
+        toFormat = toFormat.substr(1, toFormat.length);
+        listCardNumber.push(toFormat.split('-'));
+        console.log(listCardNumber);
     }
 }
 
