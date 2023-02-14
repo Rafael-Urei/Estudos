@@ -19,7 +19,7 @@
         grid-template-rows: 245px;
         grid-template-columns: 500px;
         gap: 0px;
-        scale: 0.55;
+        scale: 0.7;
         width: 100%;
         justify-content: center;
         justify-items: center;
@@ -47,5 +47,19 @@
 
     form {
         width: 100%;
+    }
+}
+
+@media all and (max-width: 360px) {
+    #card {
+        scale: 0.55;
+    }
+
+    form {
+        scale: 0.8;
+    }
+
+    .form-section {
+        margin: 0;
     }
 }

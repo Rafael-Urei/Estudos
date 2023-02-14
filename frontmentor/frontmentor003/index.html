@@ -18,7 +18,7 @@
             <div id="front-card-container">
                 <img id="front-card" src="assets/images/bg-card-front.png" alt="">
                 <div id="card-front-input">
-                    <input type="text" disabled id="front-card-number" value="0000 0000 0000 0000">
+                    <input type="text"  id="front-card-number" value="0000 0000 0000 0000">
                     <input type="text" disabled id="front-card-name" value="JANNE APLESSEED">
                     <input type="text" disabled id="front-card-date" value="00/00">
                 </div>
@@ -31,14 +31,14 @@
             </div>
         </div>
         <section class="form-section">
-            <form action="">
+            <form action="" id="form">
                 <div>
                     <label for="cardholder-name">CARDHOLDER NAME</label>
                     <input type="text" id="cardholder-name" maxlength="50" placeholder="e.g. Jane Appleseed">
                 </div>
                 <div>
                     <label for="card-number">CARD NUMBER</label>
-                    <input type="text" id="card-number" maxlength="16" placeholder="e.g. 1234 5678 9123 0000" >
+                    <input type="text" id="card-number" maxlength="16" placeholder="e.g. 1234 5678 9123 0000">
                     <p></p>
                 </div>
                 <div id="div-row">
@@ -58,5 +58,6 @@
             </form>
         </section>
     </main>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
