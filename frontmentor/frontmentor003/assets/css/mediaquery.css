@@ -37,6 +37,7 @@
        grid-row-start: 1;
        position: relative;
        top: 43%;
+       justify-items: start;
     }
 
     .form-section {

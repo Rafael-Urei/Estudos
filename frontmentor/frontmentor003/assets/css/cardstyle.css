@@ -6,6 +6,7 @@
 #back-card-container {
     display: grid;
     position: relative;
+    justify-items: center;
 }
 
 #card-front-input {
