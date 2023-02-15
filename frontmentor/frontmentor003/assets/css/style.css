@@ -119,3 +119,9 @@ button {
     border-radius: 5px;
 }
 
+#error, #error2, #error3 {
+    color: red;
+    font-size: 10px;
+    font-weight: 500;
+}
+

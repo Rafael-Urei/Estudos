@@ -2,19 +2,31 @@ function Formulario() {
 
     this.formulario = document.getElementById('form')
     this.display_number_card = document.getElementById('front-card-number');
-    this.card_number = document.getElementById('card-number');
     this.display_card_name = document.getElementById('front-card-name');
-    this.card_name = document.getElementById('cardholder-name');
     this.display_month = document.getElementById('front-card-date')
-    this.month = document.getElementById('month-number');
     this.display_year = document.getElementById('');
-    this.year = document.getElementById('year-number');
     this.display_cvv = document.getElementById('back-card-cvv');
-    this.cvv = document.getElementById('CVC');
+    this.confirm_button = document.getElementById('confirm-button');
+    this.display_error_message = document.querySelector('#error');
 
-    this.start = () => {
-        this.captureClick();
-    } 
+    this.start = e => this.captureClick();
+
+    this.formulario.addEventListener('submit', e => e.preventDefault());
+
+    this.captureClick = () => {
+        this.formulario.addEventListener('click', event => {
+            const element = event.target;
+            if (element.id === 'card-number') this.addDisplay(element, this.display_number_card, element.id);
+            if (element.id === 'cardholder-name') this.addDisplay(element, this.display_card_name, element.id);
+            if (element.id === 'month-number') this.addDisplay(element, this.display_month, element.id);
+            if (element.id === 'year-number') this.addDisplay(element, this.display_year, element.id);
+            if (element.id === 'CVV') this.addDisplay(element, this.display_cvv, element.id);
+            if (element.id === 'confirm-button') {
+                this.verifyCardNumber(this.display_number_card.value);
+                this.display_number_card.value = this.formataNumero(this.display_number_card.value);
+            } 
+        })
+    }
 
     this.addDisplay = (element, display, id) => {
       element.addEventListener('keyup', e => {
@@ -22,35 +34,34 @@ function Formulario() {
                 display.value = element.value;
                 display.innerHTML = element.value;
             }
-            if (element.id === 'card-number') {
-                const formatedNumber = this.formataNumero(element.value);
-                display.innerHTML = formatedNumber;
-            }
         })
     }
 
-    this.captureClick = () => {
-        this.formulario.addEventListener('click', event => {
-            const element = event.target;
-            if (element.id === 'card-number') this.addDisplay(this.card_number, this.display_number_card, element.id);
-            if (element.id === 'cardholder-name') this.addDisplay(this.card_name, this.display_card_name, element.id);
-            if (element.id === 'month-number') this.addDisplay(this.month, this.display_month, element.id);
-            if (element.id === 'year-number') this.addDisplay(this.year, this.display_year, element.id);
-            if (element.id === 'CVC') this.addDisplay(this.cvv, this.display_cvv, element.id);
-        })
+    this.verifyCardNumber = () => {
+        try {
+            const cardnumber = Number(this.display_number_card.value);
+            if (!Number.isInteger(cardnumber)) {
+                this.display_error_message.innerText = 'Wrong format! Numbers only.';
+                return
+            } else {
+                this.display_error_message.innerText = '';
+            }
+            } catch {
+        }
     }
 
     this.formataNumero = (toFormat) => {
-        const listCardNumber = [];
         for (i in toFormat) {
             if (i % 5 === 0) {
-                toFormat = toFormat.substr(0, i)+'-'+toFormat.substr(i);
+                toFormat = toFormat.substr(0, i)+' '+toFormat.substr(i);
             }
         }
         toFormat = toFormat.substr(1, toFormat.length);
-        listCardNumber.push(toFormat.split('-'));
-        console.log(listCardNumber);
+        console.log(toFormat);
+        return toFormat
     }
+
+    this.formataNumero(this.display_number_card.value)
 }
 
 const formulario = new Formulario();
