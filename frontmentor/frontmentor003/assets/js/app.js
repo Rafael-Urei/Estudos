@@ -23,7 +23,6 @@ function Formulario() {
             if (element.id === 'CVV') this.addDisplay(element, this.display_cvv, element.id);
             if (element.id === 'confirm-button') {
                 this.verifyCardNumber(this.display_number_card.value);
-                this.display_number_card.value = this.formataNumero(this.display_number_card.value);
             } 
         })
     }
@@ -61,7 +60,13 @@ function Formulario() {
         return toFormat
     }
 
-    this.formataNumero(this.display_number_card.value)
+    this.criaObjeto = (name, cardNumber, cvv) => {
+        return {
+            name: name,
+            cardNumber: cardNumber,
+            cvv: cvv
+        }
+    }
 }
 
 const formulario = new Formulario();
