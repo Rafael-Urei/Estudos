@@ -69,7 +69,6 @@
                         display.innerHTML = e.value;
                     }
                 } catch {
-                    
                 }
             }
         })
@@ -92,6 +91,10 @@
             console.log(user_list);
         })();
     })
+
+    function replace(string, index, replace) {
+        return string.substring(0, index) + replace + string.substring(index + replace.length);
+    }
     
     init();
 })();
