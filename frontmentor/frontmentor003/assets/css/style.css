@@ -119,9 +119,30 @@ button {
     border-radius: 5px;
 }
 
-#error, #error2, #error3 {
+#error {
+    font-size: 12px;
     color: red;
-    font-size: 10px;
-    font-weight: 500;
+    border-color: red;
 }
 
+.input {
+    font-size: 14px;
+    height: 35px;
+    border-style: hidden;
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.212);
+    border-radius: 8px;
+    font-weight: 600;
+    text-indent: 15px;
+    color: hsl(278, 67%, 19%);
+}
+
+.input_error {
+    font-size: 14px;
+    height: 35px;
+    border-style: hidden;
+    box-shadow: inset 0px 0px 1px 1px hsl(347, 81%, 48%);
+    border-radius: 8px;
+    font-weight: 600;
+    text-indent: 15px;
+    color: hsl(347, 81%, 48%);
+}

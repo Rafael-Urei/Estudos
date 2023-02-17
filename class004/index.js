@@ -21,7 +21,7 @@ function getLastDigits(firstNumbers) {
 
 const addLastDigits = list => list.push(getLastDigits(list));
 
-const numbersList = [0, 6, 7, 5, 1, 4, 2, 4, 1];
+const numbersList = [9, 9, 9, 9, 9, 9, 9, 8, 9];
 addLastDigits(numbersList);
 addLastDigits(numbersList);
 console.log(`Os últimos digitos do seu CPF são: ${numbersList[9]} e ${numbersList[10]}`);

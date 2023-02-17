@@ -19,7 +19,7 @@
     row-gap: 20px;
 }
 
-#front-card-date, #front-card-name, #front-card-number, #back-card-cvv {
+#front-card-date, #front-card-date input, #front-card-name, #front-card-number, #back-card-cvv {
     color: white;
     background-color: transparent;
     box-shadow: none;
@@ -36,8 +36,10 @@
 
 #front-card-date {
     grid-column-start: 2;
+    display: flex;
     width: 70px;
     justify-self: end;
+    justify-content: flex-end;
     text-align: right;
 }
 
@@ -59,4 +61,9 @@
     width: 70px;
     text-align: end;
     justify-self: flex-end;
+}
+
+#front-card-date input {
+    height: 35px;
+    width: 25px;
 }

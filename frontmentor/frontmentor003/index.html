@@ -20,7 +20,10 @@
                 <div id="card-front-input">
                     <input type="text" disabled id="front-card-number" value="0000000000000000">
                     <input type="text" disabled id="front-card-name" value="JANNE APLESSEED">
-                    <input type="text" disabled id="front-card-date" value="00/00">
+                    <div id="front-card-date">
+                        <input type="text" disabled id="front-card-month" value="00">
+                        <input type="text" disabled id="front-card-year" value="00">
+                    </div>
                 </div>
             </div>
             <div id="back-card-container">
@@ -33,12 +36,12 @@
         <section class="form-section">
             <form action="test.js" id="form" method="post">
                 <div>
-                    <label for="cardholder-name">CARDHOLDER NAME</label>
+                    <label for="cardholder-name" class="cardholder-name">CARDHOLDER NAME</label>
                     <input type="text" id="cardholder-name" placeholder="e.g. Jane Appleseed" autocomplete="off">
                 </div>
                 <div>
                     <label for="card-number">CARD NUMBER</label>
-                    <input type="text" id="card-number" maxlength="16" placeholder="e.g. 1234 5678 9123 0000" autocomplete="off" value="">
+                    <input type="text" id="card-number" class="input" maxlength="16" placeholder="e.g. 1234 5678 9123 0000" autocomplete="off" value="">
                     <p id="error"></p>
                 </div>
                 <div id="div-row">
@@ -59,5 +62,6 @@
         </section>
     </main>
     <script src="assets/js/app2.js"></script>
+    <script src="assets/js/validation.js"></script>
 </body>
 </html>
