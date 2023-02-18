@@ -6,8 +6,11 @@
     const year = document.getElementById('front-card-year');
     const month = document.getElementById('front-card-month');
     const button = document.getElementById('confirm-button');
-    const error_number_card = document.getElementById('error');
+    const error = document.querySelector('#error');
+    const error_2 = document.querySelector('#error2');
+    const error_3 = document.querySelector('#error3');
     const user_list = new Array();
+
 
     function init() {
         getClick();
@@ -21,57 +24,38 @@
         form.addEventListener('click', event => {
             const element = event.target;
             console.log(element);
-            if (element.id === 'card-number') addInDisplay(element, numberCard, element.id);
-            if (element.id === 'cardholder-name') addInDisplay(element, nameCard, element.id);
-            if (element.id === 'CVV') addInDisplay(element, cvv, element.id);
-            if (element.id === 'year-number') addInDisplay(element, year, element.id);
-            if (element.id === 'month-number') addInDisplay(element, month, element.id);
+            if (element.id === 'card-number') addDisplay(element, numberCard, numberCard.value.length);
+            if (element.id === 'cardholder-name') addDisplay(element, nameCard, nameCard.value.length);
+            if (element.id === 'CVV') addDisplay(element, cvv, cvv.value.length);
+            if (element.id === 'year-number') addDisplay(element, year, year.value.length);
+            if (element.id === 'month-number') addDisplay(element, month, month.value.length);
         })
     }
 
-    function addInDisplay(e, display, id) {
-        e.addEventListener('keyup', (e2) => {
+    function addDisplay(input, display, length) {
+        input.addEventListener('keyup', e => {
 
-            if (e.id === 'cardholder-name') {
-                if (e.value.length === 0) {
-                    display.value = 'JANNE APPLESEED';
-                    display.innerHTML = 'JANNE APPLESEED';
-                } else {
-                    display.value = e.value;
-                    display.innerHTML = e.value;
-                }
-
-            } else if (e.id === 'month-number' || e.id === 'year-number'){
-                if (e.value.length <= 2) {
-                    if (e2.key === 'Backspace') {
-                        display.value = '00';
-                        display.innerHTML = '00';
-                    } else if (e.id === 'year-number'){
-                        display.value = e.value;
-                        display.innerHTML = e.value;
-                    } else {
-                        display.value = e.value + '/';
-                        display.innerHTML = e.value + '/';
-                    }
-                }
-            } else if (e.id === 'card-number') {
+            if (Number(input.value)) {
                 try {
-                    let warn = Number(e.value);
-                    if (!warn) {
-                        error_number_card.innerHTML = ''
-                        error_number_card.innerHTML = 'Wrong format, number only!'
-                        e.classList.add('input_error');
-                        display.value = '0000 0000 0000 0000';
-                    }else {
-                        error_number_card.innerHTML = ''
-                        e.classList.remove('input_error');
-                        display.value = e.value;
-                        display.innerHTML = e.value;
-                    }
+                    addError(input, error_2, false)
+                    const a = input.value.padEnd(length, '0').split('');
+                    a.splice(4, 0, ' ');
+                    a.splice(9, 0, ' ');
+                    a.splice(14, 0, ' ');
+                    display.value = a.join('');
                 } catch {
+                    
                 }
+            } else {
+                addError(input, error_2, true);
+            }
+
+            if (input.id === 'cardholder-name') {
+                display.value = input.value;
+                display.innerHTML = input.value;
             }
         })
+        
     }
 
     class Card {
@@ -92,10 +76,12 @@
         })();
     })
 
-    function replace(string, index, replace) {
-        return string.substring(0, index) + replace + string.substring(index + replace.length);
+    function addError(input, e, condition) {
+        if (input.id === 'year-number') {
+            e.innerHTML = 'Error!'
+        }
     }
-    
+
     init();
 })();
 
