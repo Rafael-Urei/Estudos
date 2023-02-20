@@ -79,7 +79,6 @@ label {
 
 #first-child, #second-child {
     font-size: 12px;
-    font-weight: 500;
     color: hsl(278, 67%, 19%);
 }
 
@@ -122,19 +121,19 @@ button {
 #error {
     font-size: 12px;
     color: red;
-    border-color: red;
+    display: none;
 }
 
 #error2 {
     font-size: 12px;
     color: red;
-    border-color: red;
+    display: none;
 }
 
 #error3 {
     font-size: 12px;
     color: red;
-    border-color: red;
+    display: none;
 }
 
 .input {
