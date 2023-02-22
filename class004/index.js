@@ -7,7 +7,7 @@ function getLastDigits(firstNumbers) {
         listForSum.push(element);
     });
 
-    const sum =listForSum.reduce((acumulator, value) => acumulator += value);
+    const sum = listForSum.reduce((acumulator, value) => acumulator += value);
 
     const oneNumber = number => number = 11 - (sum % 11);
 
@@ -16,7 +16,6 @@ function getLastDigits(firstNumbers) {
     } else {
         return oneNumber(0);
     }
-    
 }
 
 const addLastDigits = list => list.push(getLastDigits(list));
