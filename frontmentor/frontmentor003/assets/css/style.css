@@ -55,7 +55,7 @@ main {
     justify-content: center;
 }
 
-form {
+.form {
     display: grid;
     grid-auto-rows: auto;
     row-gap: 20px;
@@ -64,14 +64,28 @@ form {
     scale: 1.1;
 }
 
-form > div {
+.complete {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    max-width: 300px;
+    min-width: 300px;
+    scale: 1.1;
+}
+
+.complete button {
+    width: 100%;
+}
+
+.form > div {
     display: flex;
     flex-direction: column;
     row-gap: 5px;
 }
 
 label {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 600;
     color: hsl(278, 67%, 19%);
     letter-spacing: 0.1em;
@@ -79,7 +93,6 @@ label {
 
 #first-child, #second-child {
     font-size: 12px;
-    font-weight: 500;
     color: hsl(278, 67%, 19%);
 }
 
@@ -90,7 +103,7 @@ input {
     box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.212);
     border-radius: 8px;
     font-weight: 600;
-    text-indent: 15px;
+    text-indent: 10px;
     color: hsl(278, 67%, 19%);
 }
 
@@ -105,7 +118,7 @@ input::-webkit-input-placeholder {
 
 #first-child input {
     margin-top: 5px;
-    width: 57px;
+    width: 45px;
 }
 
 #second-child input {
@@ -122,7 +135,19 @@ button {
 #error {
     font-size: 12px;
     color: red;
-    border-color: red;
+    display: none;
+}
+
+#error2 {
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+
+#error3 {
+    font-size: 12px;
+    color: red;
+    display: none;
 }
 
 .input {
