@@ -79,47 +79,18 @@
         }
     }
 
-    // Save an Object and his attributes in an Array when we submit the form;
-    
     button.addEventListener('click', e => {
         (function() {
-            if (input_number.value.length < 16 && Number(input_number.value)) {
-                addError(input_number, error);
-                return
-            }if (form.style.display === 'grid') {
-                    const user = new Card(input_name.value, Number(input_number.value), Number(input_cvv.value), Number(input_year.value), Number(input_month.value));
-                    user_list.push(user);
-                    console.log(user_list);
-                    form.style.display = 'none';
-                    button.innerHTML = 'Continue'
-                    complete.style.display = 'flex';
-                    complete.appendChild(button);
-                    form.reset();
-                } else {
-                    button.innerHTML = 'Confirm';
-                    complete.style.display = 'none';
-                    form.style.display = 'grid';
-                    form.appendChild(button);
-                }
+            const user = new Card(nameCard.value, numberCard.value, cvv.value, year.value, month.value);
+            user_list.push(user);
+            console.log(user_list);
         })();
     })
-    
-    // Add some error messages;
-    function addError(input, error) {
-        if (input.id && input.value.length === 0) {
-            error.value = "Can't be blank!"
-            error.innerHTML = "Can't be blank!";
-            error.style.display = 'block';
-        } else {
-            error.value = 'Wrong format or Incomplete, Numbers only!'
-            error.innerHTML = 'Wrong format or Incomplete, Numbers only!'
-            error.style.display = 'block';
-        }
-}
-    // Function to remove error;
-    function removeError(error) {
-        error.style.display = 'none';
+
+    function replace(string, index, replace) {
+        return string.substring(0, index) + replace + string.substring(index + replace.length);
     }
+    
     init();
 })();
 
