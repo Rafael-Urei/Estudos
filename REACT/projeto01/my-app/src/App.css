@@ -94,25 +94,30 @@ input {
   position: absolute;
   display: grid;
   grid-template-columns: 1.5fr 0.5fr;
-  grid-template-rows: 1fr 0.5fr;
+  grid-template-rows: 1fr 1fr 1fr;
   align-items: center;
+  text-transform: uppercase;
+}
 
+.card-img-white {
+  grid-column-start: 1;
+  grid-row-start: 1;
 }
 
 .cd-1 {
   margin: 0;
-  font-size: 1.2em;
-  grid-row-start: 1;
+  font-size: 1.4em;
+  grid-row-start: 2;
   grid-row-end: 2;
 }
 
 .cd-2 {
   grid-column-start: 1;
-  grid-row-start: 2;
+  grid-row-start: 3;
 }
 
 .cd-3 {
-  grid-row-start: 2;
+  grid-row-start: 3;
   justify-self: end;
 }
 
@@ -130,7 +135,18 @@ picture img {
   height: 100vh;
 }
 
-.front-card img, .back-card img {
+.bcard, .fcard {
   box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.178);
   border-radius: 10px;
+}
+
+.button {
+  height: 40px;
+  border-radius: 5px;
+  border-style: none;
+  background-color: hsl(278, 67%, 19%);
+  color: rgba(255, 255, 255, 0.856);
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-top: 15px;
 }

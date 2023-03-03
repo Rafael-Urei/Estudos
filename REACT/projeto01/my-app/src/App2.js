@@ -3,7 +3,9 @@ import { IMaskInput } from "react-imask";
 import bgimg from '../src/bg-main-desktop.png'
 import fcard from '../src/bg-card-front.png'
 import bcard from '../src/bg-card-back.png'
+import cardimg from '../src/card-logo.svg'
 import { useReducer, useState } from 'react';
+import { Route, BrowserRouter } from 'react-router-dom';
 
 function Form(){
   const [cardNumber, setValue] = useState('0000 0000 0000 0000');
@@ -11,6 +13,7 @@ function Form(){
   const [cardMonth, setMonth] = useState('mm');
   const [cardYear, setYear] = useState('yy');
   const [cardCvv, setCvv] = useState('cvv');
+  const [button, setButton] = useState();
 
   const handleAddNum = event => setValue(event.target.value);
 
@@ -22,20 +25,25 @@ function Form(){
 
   const handleAddCvc = event => setCvv(event.target.value);
 
+  const handleSubmit = event => {
+    setButton(event.preventDefault());
+  }
+
   return (
     <div className='Form'>
       <div className='card'>
         <div className='front-card'>
           <div className='card-data'>
+            <img src={cardimg} className='card-img-white'></img>
             <p className='cd-1'>{cardNumber}</p>
             <p className='cd-2'>{cardName}</p>
             <p className='cd-3'>{cardMonth}/{cardYear}</p>
           </div>
-          <img src={fcard}></img>
+          <img src={fcard} className='fcard'></img>
         </div>
         <div className='back-card'>
           <p>{cardCvv}</p>
-          <img src={bcard}></img>
+          <img src={bcard} className='bcard'></img>
         </div>
       </div>
       <picture>
@@ -50,11 +58,11 @@ function Form(){
             onChange={handleAddName}
           />
           <label htmlFor='card-number-input'>CARD NUMBER</label>
-          <IMaskInput 
-            mask={"0000 0000 0000 0000"} 
-            placeholder = 'e.g. 1234 5678 9123 0000' 
-            type='text' maxLength='20'  
-            onChange={handleAddNum} 
+          <IMaskInput
+            mask={"0000 0000 0000 0000"}
+            placeholder = 'e.g. 1234 5678 9123 0000'
+            type='text' maxLength='20'
+            onChange={handleAddNum}
             className='card-input'
           />
           <div className='exp-cvc'>
@@ -71,6 +79,7 @@ function Form(){
               />
             </div>
           </div>
+          <button type='submit' className='button' onClick={handleSubmit}>Confirm</button>
       </form>
     </div>
   );
